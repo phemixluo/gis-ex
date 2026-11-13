@@ -30,7 +30,8 @@ const selectedArticleBlocks = computed(() => {
   const { problem, index } = selectedQuestion.value
   const blocks = getArticleBlocks(problem.id)
   const scoped = blocks.filter((block) => block.taskIndex === index)
-  return scoped.length >= 3 ? scoped : blocks.filter((block) => block.taskIndex !== null)
+  const mapped = blocks.filter((block) => block.taskIndex !== null)
+  return scoped.length >= 3 ? scoped : mapped.length ? mapped : blocks
 })
 
 function openQuestion(id) {
