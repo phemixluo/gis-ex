@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />            
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="never" />
+    <title>第十届全国大学生GIS应用技能大赛试题及参考解题过程(A下午) - 北极洲的小卖部 - 博客园</title>
+    <meta name="keywords" content="GIS" />
+    <meta name="description" content="第十届全国大学生 GIS 应用技能大赛A题下午的参考解题过程，比赛过了快9个月，重做一次题目，有新感受。" />    
+    <meta property="og:description" content="第十届全国大学生 GIS 应用技能大赛A题下午的参考解题过程，比赛过了快9个月，重做一次题目，有新感受。" />
+    <meta property="og:image" content="https://img2023.cnblogs.com/blog/2331888/202305/2331888-20230503153127822-105061329.png" />
+    <meta property="bytedance:published_time" content="2022-07-24T07:50:00+08:00" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=6O_Ku8w_jYd3yw2BX9ElmxGv25AYbAQ-F6ZeOeZfxYc" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=loTNLvkb89a6fIjcMO18yopX7e1nYgZyClwW73_ywYg" />
+    <link media="(prefers-color-scheme: light)" id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=5J1NDtbnnIr2Rc2SdhEMlMxD4l9Eydj88B31E7_NhS4" />
+    <link media="(prefers-color-scheme: dark)" id="highlighter-theme-vs2015-dark" type="text/css" rel="stylesheet" href="/css/hljs/vs2015.css?v=CW_0vf5ci1rUGokoTVmmkav1K7xe6lNGyjWNwugPUFg" />
+    
+    <link type="text/css" rel="stylesheet" href="/css/fonts/Consolas.min.css" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=NPsHiqWhUqSMRIbhcM6-CDq8a4LVOL1s2EPVE5p3SsU" />
+    
+    <link id="favicon" rel="icon" type="image/x-icon" sizes="32x32" href="https://assets.cnblogs.com/favicon_v3_3.ico" />
+    <link id="favicon_svg" rel="icon" type="image/svg+xml" href="https://assets.cnblogs.com/favicon_v3_3.svg" />
+    <link rel="apple-touch-icon" href="https://assets.cnblogs.com/apple-touch-icon.png?v=2" />
+    <link rel="canonical" href="https://www.cnblogs.com/XiongHaiyang/p/16512709.html" />
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/XiongHaiyang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/XiongHaiyang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/XiongHaiyang/wlwmanifest.xml" />
+    
+    <script type="application/ld&#x2B;json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": "https://www.cnblogs.com/XiongHaiyang/p/16512709.html",
+      "headline": "第十届全国大学生GIS应用技能大赛试题及参考解题过程(A下午)",
+      "description": "本次操作使用的ArcGIS版本为 10.8 。 第Ⅰ部分：试题 一、 案例背景 \\(\\quad\\quad\\)太阳能是一种可再生资源，是指太阳的热辐射能。太阳能资源丰富，既可免费使用，又无需运输，对环境无任何污染。太阳能的利用还不是很普及，太阳能的使用受到昼夜、季节、地理纬度和海拔高度等自然条件的限制",
+      "image": [
+        "https://img2023.cnblogs.com/blog/2331888/202305/2331888-20230503153127822-105061329.png"
+      ],
+      "author": {
+        "@type": "Person",
+        "@id": "https://www.cnblogs.com/XiongHaiyang/",
+        "name": "北极洲的小卖部",
+        "url": "https://www.cnblogs.com/XiongHaiyang/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.cnblogs.com/",
+        "name": "博客园",
+        "url": "https://www.cnblogs.com/"
+      },
+      "datePublished": "2022-07-24T07:50:00.0000000&#x2B;08:00",
+      "dateModified": "2023-11-27T22:59:00.0000000&#x2B;08:00",
+      "wordCount": "20661",
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://www.cnblogs.com/XiongHaiyang/",
+        "name": "北极洲的小卖部",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://www.cnblogs.com/",
+          "name": "博客园"
+        }
+      }
+    }
+    </script>
+
+    <script>
+        var currentBlogId = 720844;
+        var currentBlogApp = 'XiongHaiyang';
+        var isLogined = false;
+        var isBlogOwner = false;
+        window.isCorp = false;
+        window.skinName = 'SimpleBlue';
+        var visitorUserId = '';
+        window.hasCustomScript = false;
+        window.cb_enable_mathjax = true;
+        window.mathEngine = 1;
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+        window.darkModeCodeHighlightTheme = 'vs2015';
+        window.isDarkCodeHighlightTheme = false;
+        window.isDarkModeCodeHighlightThemeDark = true;
+        window.isDisableCodeHighlighter = false;
+        window.enableCodeThemeTypeFollowSystem = true;
+        window.enableMacStyleCodeBlock = false;        
+    </script>
+        <script>
+            window.currentPostId = 16512709;
+            window.currentPostDateAdded = '2022-07-24 07:50';
+        </script>
+    <script src="https://assets.cnblogs.com/scripts/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn-www.cnblogs.com/js/blog-common.min.js?v=hR-lIKyiNnMONMoRnGahxbmGj8Nc0vI6JpCBb_gCDfs"></script>
+    
+</head>
+<body class="skin-simpleblue has-navbar mathjax3">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="//assets.cnblogs.com/logo.svg" alt="博客园logo" />
+                    </a>
+                </li>
+                <li><a href="https://cnblogs.vip/">会员</a></li>
+                <li><a href="https://cnblogs.vip/store">周边</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>                
+                <li><a href="https://www.cnblogs.com/cmt/p/19316348">赞助商</a></li>
+                <li><a href="https://chat2db-ai.com/" target="_blank">Chat2DB</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search dropdown" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" autocomplete="off" />
+                        <button id="zzk_search_button" onclick="window.navbarSearchManager.triggerActiveOption()">
+                            <img id="search_icon" class="focus-hidden" src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                            <img class="hidden focus-visible" src="//assets.cnblogs.com/icons/enter.svg" alt="搜索" />
+                        </button>
+                        <ul id="navbar_search_options" class="dropdown-menu quick-search-menu">
+                            <li tabindex="0" class="active" onclick="zzkSearch(event, document.getElementById('zzk_search_input').value)">
+                                <div class="keyword-wrapper">
+                                    <img src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                                    <div class="keyword"></div>
+                                </div>
+                                <span class="search-area">所有博客</span>
+                            </li>
+                                    <li tabindex="1" onclick="zzkBlogSearch(event, 'XiongHaiyang', document.getElementById('zzk_search_input').value)">
+                                        <div class="keyword-wrapper">
+                                            <img src="//assets.cnblogs.com/icons/search.svg" alt="搜索" />
+                                            <div class="keyword"></div>
+                                        </div>
+                                        <span class="search-area">当前博客</span>
+                                    </li>
+                        </ul>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://www.cnblogs.com/my" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="//assets.cnblogs.com/icons/message.svg" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="//assets.cnblogs.com/icons/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="//assets.cnblogs.com/icons/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://www.cnblogs.com/my">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="https://vip.cnblogs.com/my">会员中心</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            <div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/XiongHaiyang">北极洲的小卖部</a>
+</div>
+<div class="subtitle"></div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/XiongHaiyang/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8C%97%E6%9E%81%E6%B4%B2%E7%9A%84%E5%B0%8F%E5%8D%96%E9%83%A8">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/XiongHaiyang/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                <div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                <a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/XiongHaiyang/p/16512709.html" title="发布于 2022-07-24 07:50">
+    
+
+    <span role="heading" aria-level="2">第十届全国大学生GIS应用技能大赛试题及参考解题过程(A下午)</span>
+    
+
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                    <div id="cnblogs_post_description" style="display: none">
+        <img src="https://img2023.cnblogs.com/blog/2331888/202305/2331888-20230503153127822-105061329.png" alt="第十届全国大学生GIS应用技能大赛试题及参考解题过程(A下午)" class="desc_img" />
+        第十届全国大学生 GIS 应用技能大赛A题下午的参考解题过程，比赛过了快9个月，重做一次题目，有新感受。
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+<p>本次操作使用的ArcGIS版本为 10.8 。</p>
+<h2 id="第ⅰ部分试题">第Ⅰ部分：试题</h2>
+<h3 id="一-案例背景">一、 案例背景</h3>
+<p><span class="math inline">\(\quad\quad\)</span>太阳能是一种可再生资源，是指太阳的热辐射能。太阳能资源丰富，既可免费使用，又无需运输，对环境无任何污染。太阳能的利用还不是很普及，太阳能的使用受到昼夜、季节、地理纬度和海拔高度等自然条件的限制以及晴、阴、云、雨等随机因素的影响。</p>
+<p><span class="math inline">\(\quad\quad\)</span>某住宅小区希望在屋顶安装太阳能，供给家庭日常用电。你将为该小区评估是否适合安装太阳能电池板。</p>
+<h3 id="二-数据说明见-上午a-文件夹中的-数据-文件夹">二、 数据说明（见 “上午A” 文件夹中的 “数据” 文件夹）</h3>
+<ol>
+<li>Building.shp：建筑物数据。</li>
+<li>DSM.tif：数字表面模型。</li>
+<li>DTM.tif：数字地面模型。</li>
+</ol>
+<h3 id="三-分析要求100分">三、 分析要求（100分）</h3>
+<ol>
+<li>
+<p><strong>根据建筑物修正DTM</strong>（15分）<br>
+DTM 一般指数字地面模型，在本项目中，你可以理解为 DEM。<br>
+DSM 是数字地面模型，包括地形及地表的所有对象 (例如树和建筑物等) 。<br>
+本项目中的 DTM 和 DSM 数据都是通过雷达数据生成，固有一定的误差。正确的 DTM 应该在建筑物处是平整的，而不是倾斜或者高低起伏。<br>
+1） 请为 Building 添加属性字段【基本高度】，并计算数值。 (5分)<br>
+<span class="math inline">\(\quad\quad\)</span>基本高度指建筑物底部高程值，本题请计算每栋建筑物范围内的 DTM 的平均值，保留 2 位小数位数。</p>
+<p>2） 修正 DTM 数据，将结果命名为 “DTM 修正” 。 (10分)<br>
+<span class="math inline">\(\quad\quad\)</span>建筑物所在位置对应的 DTM 应是平整的，高程值为建筑物的基本高度。</p>
+</li>
+<li>
+<p><strong>计算每栋房屋的其它基础信息</strong>（20分）<br>
+1） 请为 Building 添加属性字段【最大高度】，并计算数值。 (5分)<br>
+<span class="math inline">\(\quad\quad\)</span>最大高度指建筑物屋顶的最大高程值，保留 2 位小数位数。<br>
+2） 请为 Building 添加属性字段【建筑物高度】，并计算数值。 (5分)<br>
+<span class="math inline">\(\quad\quad\)</span>建筑物高度指建筑物本身的高度，保留 2 位小数位数。<br>
+3） 填写下表中的建筑物屋顶形态。 (10)<br>
+<span class="math inline">\(\quad\quad\)</span>屋顶形态分为平屋顶、双坡屋顶、四坡屋顶。屋顶朝向分为平面、东、南、西、北、东南、西南、东北和西北。如果建筑物是双坡屋顶，请填写 2 个屋顶朝向；如果建筑物是四坡屋顶，请填写 4 个屋顶朝向。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">序号</th>
+<th style="text-align: center">BuildingBM</th>
+<th style="text-align: center">屋顶形态</th>
+<th style="text-align: center">屋顶朝向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">1</td>
+<td style="text-align: center">2116</td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">2</td>
+<td style="text-align: center">2156</td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">3</td>
+<td style="text-align: center">2161</td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">4</td>
+<td style="text-align: center">2165</td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">5</td>
+<td style="text-align: center">2171</td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>创建房屋屋顶区域 2021 年每月预计获得太阳辐射量栅格数据，在环境设置中，将 Building 作为掩膜</strong>（15分）<br>
+1） 【太阳辐射区域】工具可以计算从栅格表面获得的入射太阳辐射。输出总辐射栅格用于表示为输入表面的每个位置所计算的全局辐射或全部日照入射量（直射 + 散射）的输出栅格。输出单位为瓦特每小时每平方米（WH/m<sup>2</sup>）。<br>
+<span class="math inline">\(\quad\quad\)</span>a）本题工具主参数中天空大小为 200，间隔小时数 0.5，其他主参数请自行研究。<br>
+<span class="math inline">\(\quad\quad\)</span>b）本题工具地形参数中地形方向为 16，其它保持不变。<br>
+2） 太阳辐射区域工具计算的太阳辐射量为假设该地区全部晴天可以获得的太阳辐射量。实际太阳辐射受晴、阴、云、雨等随机因素的影响。为了简化计算，我们把天气分为晴天和非晴天，晴天可以获得太阳辐射区域工具计算的全部太阳辐射量，非晴天则无法获得任何太阳辐射量。<br>
+3） 该地区 2021 年每月晴天数据如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">月份</th>
+<th style="text-align: center">1月</th>
+<th style="text-align: center">2月</th>
+<th style="text-align: center">3月</th>
+<th style="text-align: center">4月</th>
+<th style="text-align: center">5月</th>
+<th style="text-align: center">6月</th>
+<th style="text-align: center">7月</th>
+<th style="text-align: center">8月</th>
+<th style="text-align: center">9月</th>
+<th style="text-align: center">10月</th>
+<th style="text-align: center">11月</th>
+<th style="text-align: center">12月</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">晴天</td>
+<td style="text-align: center">25</td>
+<td style="text-align: center">20</td>
+<td style="text-align: center">24</td>
+<td style="text-align: center">23</td>
+<td style="text-align: center">20</td>
+<td style="text-align: center">15</td>
+<td style="text-align: center">22</td>
+<td style="text-align: center">26</td>
+<td style="text-align: center">27</td>
+<td style="text-align: center">20</td>
+<td style="text-align: center">25</td>
+<td style="text-align: center">26</td>
+</tr>
+</tbody>
+</table>
+<p>4） 根据每月晴天数据，创建房屋屋顶范围内 2021 年每月太阳辐射栅格数据，像元值表示瓦特每小时每平方米（WH/m<sup>2</sup>）。请命名为“太阳辐射 1 月”、“太阳辐射 2 月”、“太阳辐射 3 月”，以此类推，完成下表。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">月份</th>
+<th style="text-align: center">1月</th>
+<th style="text-align: center">2月</th>
+<th style="text-align: center">3月</th>
+<th style="text-align: center">4月</th>
+<th style="text-align: center">5月</th>
+<th style="text-align: center">6月</th>
+<th style="text-align: center">7月</th>
+<th style="text-align: center">8月</th>
+<th style="text-align: center">9月</th>
+<th style="text-align: center">10月</th>
+<th style="text-align: center">11月</th>
+<th style="text-align: center">12月</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">低值</td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center">高值</td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>计算 8 月份可用房屋屋顶范围内的太阳辐射量，在环境设置中，将 Building 作为掩膜</strong>（30分）<br>
+考虑到太阳能电池板的能效，符合以下条件的屋顶才适合安装电池板。<br>
+1） 如果屋顶坡度小于等于 15 度，则任何屋顶方向都可以安装太阳能电池板。<br>
+2） 如果屋顶坡度大于 15 度，且小于等于 30 度，则屋顶朝向不可以朝北（北方为大于等于 337.5，或者小于等于 22.5 度）。<br>
+3） 如果屋顶坡度大于 30 度，且小于等于 45 度，则屋顶朝向不可以朝北、东北和西北（东北为大于 22.5 度且小于等于 67.5 度，西北为大于等于 292.5 度且小于 337.5 度）。<br>
+4） 创建 2021 年 8 月，符合以上条件要求的房屋屋顶范围内的太阳辐射量栅格数据，命名为“可用辐射 8 月”，像元值表示瓦特每小时每平方米（WH/m<sup>2</sup>）。</p>
+</li>
+<li>
+<p><strong>计算 8 月份每栋房屋可接收的太阳辐射量，在环境设置中，将 Building 作为掩膜</strong><br>
+1） 为 Building 添加属性字段【可用面积】，计算每栋房屋屋顶可用太阳辐射区域的面积。 (10分)<br>
+<span class="math inline">\(\quad\quad\)</span>面积单位为平方米，保留 2 位小数位数。1 平方英尺 = 0.093 平方米。<br>
+2） 为 Building 添加属性字段【可用辐射 8 月】，计算每栋房屋屋顶 8 月可接受太阳辐射量。 (10月)<br>
+<span class="math inline">\(\quad\quad\)</span>a） 如果每栋房屋可用面积小于 25 平方米，则该栋房屋不适合安装太阳能电池板，无需计算可接受太阳辐射量。<br>
+<span class="math inline">\(\quad\quad\)</span>b） 可用辐射量单位为<font color="red">千瓦时（KWH）</font>，保留 2 位小数位数。</p>
+</li>
+</ol>
+<h2 id="第ⅱ部分参考解题过程">第Ⅱ部分：参考解题过程</h2>
+<h3 id="一-导入原始数据并配置地理处理空间">一、 导入原始数据并配置地理处理空间</h3>
+<p><span class="math inline">\(\quad\quad\)</span>打开【地理处理】|【环境】，设置工作空间（我的数据文件夹就放在桌面上），并设置输出栅格像元大小与 DTM 一致。</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwFqe.png" width="480px" height="440px">
+</div>
+<div align="center">
+<font size="1">
+图1 设置地理处理环境
+</font>
+</div>
+<p><span class="math inline">\(\quad\quad\)</span>导入原始数据 “Building.shp” 、 “DTM.tif” 以及 “DSM.tif” 进入显示窗口中，操作前查看数据的坐标系是一个好习惯，发现三者的投影坐标系均一致，无需特别处理。</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwEad.png" width="800px" height="400px">
+</div>
+<div align="center">
+<font size="1">
+图2 导入原始数据并查看坐标系
+</font>
+</div>
+<h3 id="二根据建筑物修正dtm">二、根据建筑物修正DTM</h3>
+<ol>
+<li>
+<p>计算【基本高度】字段<br>
+<span class="math inline">\(\quad\quad\)</span>我们首先需要计算建筑物底部的高程值，其数值为房屋区域 DTM 的平均值，可以想到需要使用分区统计之类的工具，又涉及属性表添加字段，所以选定【ArcToolBox】|【Spatial Analyst】|【区域分析】|【以表格显示分区统计】该工具。<br>
+<span class="math inline">\(\quad\quad\)</span>首先打开 Building 的属性表并且添加双精度类型字段 “base_tall” ，我选的精度是 12，小数位数被规定为 2。添加字段之后在属性表中<strong>右键字段名称</strong>更改字段属性，将【别名】设置为中文名称 “基本高度”。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwAVH.png" width="480px" height="420px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图3 添加【基本高度】字段
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>然后打开【以表格显示分区统计】该工具，以 Building 为分区的依据对每栋房屋范围内的 DTM 进行均值统计，该工具的输出结果是一个表格，【内容列表】需要 “按源列出” 才可以看到并打开。工具详细设置界面如下：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwirD.png" width="480px" height="370px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图4 分区统计 DTM 均值
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>上述操作的输出结果是一张表格，内部有 “ROWID”、“BUILDINGBM”、“COUNT”、“AREA”、“MEAN” 这 5 个字段。将 Building.shp 与表格 mean_dtm 根据 “BUILDINGBM” 字段建立连接。然后使用【字段计算器】让 “mean_dtm:MEAN” 对 “Building:base_tall”进行赋值。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwPKO.png" width="280px" height="400px">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwVIA.png" width="300px" height="400px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图5、6 连接属性表并且对字段【基本高度】进行赋值
+ </font>
+ </div>
+<p>【基本高度】字段已经赋值完毕，结果如下，解除 Building 与 mean_dtm 之间的连接。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwePI.png" width="480px" height="370px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图7 【基本高度】字段计算结果
+ </font>
+ </div>
+</li>
+<li>
+<p>修正 DTM 数据<br>
+<span class="math inline">\(\quad\quad\)</span>使用【ArcToolBox】|【Spatial Analyst】|【区域分析】|【分区统计】工具，设置界面如下：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwmGt.png" width="480px" height="360px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图8 DTM 分区统计均值生成栅格
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>输出结果如下，可以看出，每栋房屋的 mean_DTM 是均匀一致的。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwnRP.png" width="800px" height="400px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图9 分区统计结果
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>然后将 mean_DTM.tif 与 DTM 【镶嵌至新栅格】，需要注意镶嵌的顺序：如果输入数据中 mean_DTM 在前，那么镶嵌方式选择为 “FIRST”，反之则选择镶嵌方式为 “LAST”，因为我们的目的是希望 mean_DTM 代替局部的 DTM，来产生 “DTM 修正”。除此之外，镶嵌至新栅格需要设置波段数、像元大小、像素类型等参数，这些参数均参照 DTM。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwuxf.png" width="480px" height="380px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图10 查看 DTM 的属性
+ </font>
+ </div>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwMM8.png" width="480px" height="430px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图11 镶嵌至新栅格设置界面
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>DTM 修正结果如下：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwlqg.png" width="800px" height="400px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图12 DTM 修正结果
+ </font>
+ </div>
+</li>
+</ol>
+<h3 id="三计算每栋房屋的其它基础信息">三、计算每栋房屋的其它基础信息</h3>
+<p><span class="math inline">\(\quad\quad\)</span>首先对 Building 添加字段【max_tall】和【build_tall】，保留 2 位小数，并且将别名分别设置为【最大高度】和【建筑物高度】。</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwQsS.png" width="480px" height="430px">
+</div>
+<div align="center">
+<font size="1">
+图13 添加【最大高度】和【建筑物高度】字段
+</font>
+</div>
+<ol>
+<li>
+<p>计算房屋的最大高度<br>
+<span class="math inline">\(\quad\quad\)</span>获取建筑物的最大高度与上一步骤获取建筑物底部高程值步骤一致，先使用【以表格显示分区统计】工具，对 DSM 的每一栋房屋屋顶范围内的<strong>最大值</strong>进行统计，输出表格后与 Building 建立连接，然后对字段【最大高度】进行赋值，最后解除连接。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXw3ZQ.png" width="480px" height="370px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图14 分区统计 DSM 最大值获取【最大高度】
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>连接属性表以及使用【字段计算器】进行赋值的步骤已省略，计算【最大高度】与之前计算【基本高度】的步骤相似，可参照前文。</p>
+</li>
+<li>
+<p>计算房屋的建筑物高度<br>
+<span class="math inline">\(\quad\quad\)</span>建筑物高度等于最大高度减去基本高度，因此有：<span class="math inline">\(build\_tall = max\_tall - base\_tall\)</span>。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXw8aj.png" width="280px" height="370px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图15 字段计算器计算【建筑物高度】
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>最终得到的【建筑物高度】连同上一步得到的【最大高度】如下图所示：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwGIs.png" width="480px" height="380px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图16 房屋最大高度和建筑物高度计算结果
+ </font>
+ </div>
+</li>
+<li>
+<p>获取指定房屋的屋顶形态<br>
+<span class="math inline">\(\quad\quad\)</span>由题目提示可以知道，判断房屋屋顶形态的依据是坡向。因此先计算建筑物屋顶范围内的坡向。输入数据为 DSM。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwYin.png" width="480px" height="350px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图17 计算坡向
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>先不忙点击【确定】执行工具，点击【环境】设置【掩膜】为 Building，这样可以只提取屋顶范围内的坡向。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwtGq.png" width="480px" height="350px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图18 设置 Building 为掩膜
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>完成设置并执行【坡向】工具后得到如下结果：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwUzV.png" width="800px" height="400px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图19 坡向计算结果并且借助 Building 定位判断屋顶形态
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>到这里可以使用 Building.shp 辅助定位特定编号的房屋。使用【按属性选择】工具，根据 Building.shp 的 BuildingBM 属性分别先后筛选编号为 “2116”、“2156”、“2161”、“2165”、“2171” 这 5 栋房屋。然后根据 Building.shp 的高亮提示，结合 “Aspect_DSM.tif” 可以判断该房屋的屋顶坡向分布情况，如上图所示，编号为 “2116” 的房屋屋顶为双坡屋顶，并且朝向为西北与东南。最终完成下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">序号</th>
+<th style="text-align: center">BuildingBM</th>
+<th style="text-align: center">屋顶形态</th>
+<th style="text-align: center">屋顶朝向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">1</td>
+<td style="text-align: center">2116</td>
+<td style="text-align: center">双坡屋顶</td>
+<td style="text-align: center">西北、东南</td>
+</tr>
+<tr>
+<td style="text-align: center">2</td>
+<td style="text-align: center">2156</td>
+<td style="text-align: center">四坡屋顶</td>
+<td style="text-align: center">东、南、西、北</td>
+</tr>
+<tr>
+<td style="text-align: center">3</td>
+<td style="text-align: center">2161</td>
+<td style="text-align: center">四坡屋顶</td>
+<td style="text-align: center">西北、东北、东南、西南</td>
+</tr>
+<tr>
+<td style="text-align: center">4</td>
+<td style="text-align: center">2165</td>
+<td style="text-align: center">四坡屋顶</td>
+<td style="text-align: center">西北、东北、东南、西南</td>
+</tr>
+<tr>
+<td style="text-align: center">5</td>
+<td style="text-align: center">2171</td>
+<td style="text-align: center">四坡屋顶</td>
+<td style="text-align: center">西北、东北、东南、西南</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h3 id="四创建房屋屋顶区域-2021-年每月预计获得太阳辐射量栅格数据在环境设置中将-building-作为掩膜">四、创建房屋屋顶区域 2021 年每月预计获得太阳辐射量栅格数据，在环境设置中，将 Building 作为掩膜</h3>
+<p><span class="math inline">\(\quad\quad\)</span>计算房屋屋顶区域 12 个月每一个月的太阳辐射量栅格数据主要使用【太阳辐射区域】工具，该工具位于【ArcToolBox】|【Spatial Analyst】|【太阳辐射】目录下，并且题目中对于参数已经做了限定，其余参数保持默认即可。尝试了几次该工具后我发现，其计算速度比较慢，如果手动计算 12 次要等很久，于是想到了使用 Arcpy 的 Python 模块来编写脚本。这样在 Python 代码运行的过程中可以继续使用 ArcMap 进行操作。</p>
+<p><span class="math inline">\(\quad\quad\)</span>使用 ArcGIS 的 Python 脚本功能主要有 2 种方式：</p>
+<blockquote>
+<ol>
+<li>使用 ArcMap 主界面的 Python 脚本编辑器;</li>
+<li>使用外部的 Python 开发环境引入 Arcpy 模块。</li>
+</ol>
+</blockquote>
+<p><span class="math inline">\(\quad\quad\)</span>这里我选择后者以方便调试。我打开了 Pycharm，新建 Python 项目，然后设置编译器的位置为 ArcGIS 安装位置处的 Python 2.7.18 环境，开发环境就这样搭建好啦。</p>
+<p><span class="math inline">\(\quad\quad\)</span>那么接下来的问题是如何编写代码，由于 ArcMap 的【模型构建器】具有一键导出模型为 Python 脚本的功能，因此我先在 ArcToolBox 中拖动【太阳辐射区域】工具进入 【模型构建器】编辑界面，然后设置参数，然后一键生成代码，ArcMap 这个功能可以说是我的福音啊哈哈哈。</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwNR0.png" width="480px" height="400px">
+</div>
+<div align="center">
+<font size="1">
+图20 添加【太阳辐射区域】进入模型构建器并设置掩膜
+</font>
+</div>
+<p><span class="math inline">\(\quad\quad\)</span>上图中可以看出我事先设置模型属性中的掩膜为 Building.shp。太阳辐射区域的设置界面如下所示（以计算屋顶区域 2021 年 1 月份太阳辐射为例）：</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwdMT.png" width="480px" height="460px">
+</div>
+<div align="center">
+<font size="1">
+图21 太阳辐射区域设置界面
+</font>
+</div>
+<p><span class="math inline">\(\quad\quad\)</span>设置完工具之后回到【模型构建器】的编辑界面，点击【导出至 Python 脚本】:</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwwsU.png" width="480px" height="400px">
+</div>
+<div align="center">
+<font size="1">
+图22 导出模型到 Python 脚本
+</font>
+</div>
+<p><span class="math inline">\(\quad\quad\)</span>当然，导出的脚本仍然有一些不完善的地方，例如需要针对每个月晴天天数对结果进行乘法修正，需要得到每个月太阳辐射的低值和高值。这时可以参照 ArcGIS 的帮助文档修改代码，帮助文档对 Python 脚本也是有详细介绍的：</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwDZ4.png" width="800px" height="400px">
+</div>
+<div align="center">
+<font size="1">
+图23 ArcGIS 帮助文档界面
+</font>
+</div>
+<p><span class="math inline">\(\quad\quad\)</span>最后，这是我的脚本的最终版本：</p>
+<pre><code class="language-Python"># -*- coding:UTF-8 -*-
+# Name: AreaSolarRadiation_example02.py
+# Description: Derives incoming solar radiation from a raster surface. 
+#              Outputs a global radiation raster and optional direct, diffuse and direct duration rasters
+#              for a specified time period. (April to July).
+#              
+# Requirements: Spatial Analyst Extension
+
+# Import system modules
+import arcpy
+from arcpy import env
+from arcpy.sa import *
+import numpy as np
+
+# Set environment settings
+env.workspace = "C:/Users/Fangh/Desktop/data"  # 工作空间，需更改
+
+# Check out the ArcGIS Spatial Analyst extension license
+arcpy.CheckOutExtension("Spatial")
+
+# Set Geoprocessing environments
+env.cellSizeProjectionMethod = "CONVERT_UNITS"
+env.cellSize = "DTM.tif"  # 像元大小与DTM.tif一致
+env.mask = "Building.shp"  # 设置屋顶区域Building.shp为掩膜
+
+# Set local variables
+inRaster = "C:/Users/Fangh/Desktop/data/DSM.tif"
+latitude = 41.77686382537  # 纬度
+skySize = 200  # 天空大小
+timeConfig = [TimeMultipleDays(2021, 1, 31),      # Jenuary
+              TimeMultipleDays(2021, 32, 59),     # February
+              TimeMultipleDays(2021, 60, 90),     # March
+              TimeMultipleDays(2021, 91, 120),    # April
+              TimeMultipleDays(2021, 121, 151),   # May
+              TimeMultipleDays(2021, 152, 181),   # June
+              TimeMultipleDays(2021, 182, 212),   # July
+              TimeMultipleDays(2021, 213, 243),   # August
+              TimeMultipleDays(2021, 244, 273),   # September
+              TimeMultipleDays(2021, 274, 304),   # October
+              TimeMultipleDays(2021, 305, 334),   # November
+              TimeMultipleDays(2021, 335, 365)]   # December
+dayInterval = 14  # 间隔天数
+hourInterval = 0.5  # 间隔小时数
+zFactor = 1  # 地形参数/Z因子
+calcDirections = 16  #  地形参数/计算方向
+zenithDivisions = 8  # 辐射参数/天顶分割
+azimuthDivisions = 8  # 辐射参数/方位角分割
+diffuseProp = 0.3  # 辐射参数/散射比例
+transmittivity = 0.5  # 辐射参数/透射率
+outDirectRad = ""  # 无需"输出直接辐射栅格数据"
+outDiffuseRad = ""  # 无需"输出散射辐射栅格数据"
+outDirectDur = ""  # 无需"直接辐射持续时间栅格数据"
+
+# Sunny days in every month
+SunnyDay = [25.0/31.0, 20.0/28.0, 24.0/31.0,
+            23.0/30.0, 20.0/31.0, 15.0/30.0,
+            22.0/31.0, 26.0/31.0, 27.0/30.0,
+            20.0/31.0, 25.0/30.0, 26.0/31.0]
+
+# statistic the maximum and minimum of every raster
+mni_max_value = np.zeros([2, 12])
+outputcsv = r"C:/Users/Fangh/Desktop/data/statics.csv"
+outputfile = open(outputcsv, 'w')
+
+
+for i in range(12):
+   # Execute AreaSolarRadiation
+   outGlobalRad = AreaSolarRadiation(inRaster, latitude, skySize, timeConfig[i],
+      dayInterval, hourInterval, "NOINTERVAL", zFactor, "FROM_DEM",
+      calcDirections, zenithDivisions, azimuthDivisions, "UNIFORM_SKY",
+      diffuseProp, transmittivity, outDirectRad, outDiffuseRad, outDirectDur)
+
+   # Consider the sunny day
+   outGlobalRad *= SunnyDay[i]
+
+   # Save the output
+   outGlobalRad.save("C:/Users/Fangh/Desktop/data/Rad_"+str(i+1)+".tif")
+
+   # Get the minimum and maximum
+   minimumvalueInfo = arcpy.GetRasterProperties_management(outGlobalRad, "MINIMUM")
+   mni_max_value[0, i] = minimumvalueInfo.getOutput(0)
+
+   maximumvalueInfo = arcpy.GetRasterProperties_management(outGlobalRad, "MAXIMUM")
+   mni_max_value[1, i] = maximumvalueInfo.getOutput(0)
+
+# Write the outputfile
+outputfile.write('Month'+','+'January'+','+'February'+','+'March'+','+'April'+','+'May'+','+'June'+','+'July'+','+'August'+','+'September'+','+'October'+','+'November'+','+'December'+'\n')
+outputfile.write('Minimum')
+for i in range(12):
+    outputfile.write(','+str(mni_max_value[0, i]))
+outputfile.write('\n')
+outputfile.write('Maximum')
+for i in range(12):
+    outputfile.write(','+str(mni_max_value[1, i]))
+outputfile.write('\n')
+
+outputfile.close()
+
+print("All Job Were Done!")
+
+</code></pre>
+<p><span class="math inline">\(\quad\quad\)</span>这份代码在计算出 12 个月份的屋顶区域太阳辐射量栅格数据之后，生成了一份 statistic.csv 逗号分隔值文件（用 Excel 打开），与数据存放在相同文件夹之下。于是得到房屋屋顶区域 2021 年每月的太阳辐射量栅格数据以及每一个月的低值和高值如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">月份</th>
+<th style="text-align: center">1月</th>
+<th style="text-align: center">2月</th>
+<th style="text-align: center">3月</th>
+<th style="text-align: center">4月</th>
+<th style="text-align: center">5月</th>
+<th style="text-align: center">6月</th>
+<th style="text-align: center">7月</th>
+<th style="text-align: center">8月</th>
+<th style="text-align: center">9月</th>
+<th style="text-align: center">10月</th>
+<th style="text-align: center">11月</th>
+<th style="text-align: center">12月</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">低值</td>
+<td style="text-align: center">4.23221254349</td>
+<td style="text-align: center">5.31080770493</td>
+<td style="text-align: center">9.62105178833</td>
+<td style="text-align: center">12.2721033096</td>
+<td style="text-align: center">12.555768013</td>
+<td style="text-align: center">10.0049877167</td>
+<td style="text-align: center">14.2893257141</td>
+<td style="text-align: center">14.9097099304</td>
+<td style="text-align: center">12.1840105057</td>
+<td style="text-align: center">6.18915987015</td>
+<td style="text-align: center">4.79556846619</td>
+<td style="text-align: center">3.67597270012</td>
+</tr>
+<tr>
+<td style="text-align: center">高值</td>
+<td style="text-align: center">39828.0976563</td>
+<td style="text-align: center">48683.125</td>
+<td style="text-align: center">85742.09375</td>
+<td style="text-align: center">106786.398438</td>
+<td style="text-align: center">108502.523438</td>
+<td style="text-align: center">85074.40625</td>
+<td style="text-align: center">123380.328125</td>
+<td style="text-align: center">129046.210938</td>
+<td style="text-align: center">107483.84375</td>
+<td style="text-align: center">56247.484375</td>
+<td style="text-align: center">44828.5390625</td>
+<td style="text-align: center">28945.9609375</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\quad\quad\)</span>最后，手动拖入 12 份栅格数据进入 ArcMap 查看有无错误，并修改中文名称为 “太阳辐射 * 月”。结果如下：</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwso9.png" width="800px" height="400px">
+</div>
+<div align="center">
+<font size="1">
+图24 2021 年每月房屋屋顶太阳辐射量栅格数据
+</font>
+</div>
+<h3 id="五计算-8-月份可用房屋屋顶范围内的太阳辐射量在环境设置中将-building-作为掩膜">五、计算 8 月份可用房屋屋顶范围内的太阳辐射量，在环境设置中，将 Building 作为掩膜</h3>
+<p><span class="math inline">\(\quad\quad\)</span>这一要求可以使用 “与或非” 逻辑解决，借助【ArcToolBox】|【Spatial Analyst】|【地图代数】|【栅格计算器】工具，当<strong>坡度位于于 <span class="math inline">\([0, 15]\)</span> 度时，可以在任意坡向方向安装太阳能电池板</strong>，<font color="Red">或者</font><strong>坡度位于 <span class="math inline">\((15, 30]\)</span> 度之间时，且坡向位于 <span class="math inline">\((22.5, 337.5)\)</span> 度之间</strong>，<font color="Red">或者</font><strong>坡度位于 <span class="math inline">\((30, 45]\)</span> 度之间时，且坡向位于 <span class="math inline">\((67.5, 292.5)\)</span> 度之间</strong>。</p>
+<ol>
+<li>
+<p>计算坡度<br>
+<span class="math inline">\(\quad\quad\)</span>打开【ArcToolBox】|【Spatial Analyst】|【表面分析】|【坡度】，输入 DSM，设置 Building 为掩膜：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwrdJ.png" width="480px" height="310px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图25 计算坡度
+ </font>
+ </div>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXw6iR.png" width="480px" height="280px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图26 环境中设置 Building 为掩膜
+ </font>
+ </div>
+</li>
+<li>
+<p>计算 8 月份可用房屋屋顶范围内的太阳辐射量</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwcJ1.png" width="480px" height="350px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图27 栅格计算器输入逻辑表达式提取可用房屋屋顶范围内的太阳辐射
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>表达式的的全文如下（其中“太阳辐射量\”表示图层组）：</p>
+<pre><code>( ("Slope_DSM.tif" &lt;= 15) + ("Slope_DSM.tif" &gt; 15)*("Slope_DSM.tif" &lt;= 30)*("Aspect_DSM.tif" &gt; 22.5)*("Aspect_DSM.tif" &lt; 337.5) + ("Slope_DSM.tif" &gt; 30)*("Slope_DSM.tif" &lt;= 45)*("Aspect_DSM.tif" &gt; 67.5)*("Aspect_DSM.tif" &lt; 292.5)  ) * "太阳辐射量\太阳辐射8月.tif"
+</code></pre>
+</li>
+<li>
+<p>将 0 值转化为 NoData<br>
+<span class="math inline">\(\quad\quad\)</span>因为上述逻辑表达式的结果是 “0” 或者 “1” 与 “太阳辐射量\太阳辐射8月.tif” 进行乘法操作，所以结果中出现了 “0” ，现在需要将 8 月份可用房屋屋顶范围内的零太阳辐射值变为 NoData。仍然使用【栅格计算器】，使用 “SetNull” 函数，使用之前查看帮助文档中的语法：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwgRx.png" width="800px" height="320px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图28 SetNull 函数的标准用法文档说明
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>因此，表达式为：</p>
+<pre><code>SetNull("batter_rad_8.tif", "batter_rad_8.tif", "Value = 0")
+</code></pre>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXw2z6.png" width="480px" height="330px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图29 将 0 转化为 NoData
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>其中，“batter_rad_8.tif” 为上一步的计算结果，此步骤的输出结果为 “valid_rad_8.tif”，修改中文名称为 “可用辐射 8 月”。</p>
+</li>
+</ol>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwWQK.png" width="800px" height="400px">
+</div>
+<div align="center">
+<font size="1">
+图30 可用辐射 8 月栅格数据结果
+</font>
+</div>
+<h3 id="六计算-8-月份每栋房屋可接收的太阳辐射量在环境设置中将-building-作为掩膜">六、计算 8 月份每栋房屋可接收的太阳辐射量，在环境设置中，将 Building 作为掩膜</h3>
+<p><span class="math inline">\(\quad\quad\)</span>首先添加字段【可用面积】与【可用辐射量 8 月】如下所示，小数位数为 2 位，数据类型为双精度，精度为 12 位：</p>
+<div align="center">
+<img src="https://s1.ax1x.com/2022/07/23/jXwfsO.png" width="480px" height="350px">
+</div>
+<div align="center">
+<font size="1">
+图31 添加【可用面积】与【可用辐射量 8 月】两个字段
+</font>
+</div>
+<ol>
+<li>
+<p>计算【可用面积】<br>
+<span class="math inline">\(\quad\quad\)</span>上一步骤已经得到可用房屋屋顶范围内的太阳辐射量，此步骤需要计算其面积，而栅格数据计算面积通常是<strong>像元总数乘以单个像元大小</strong>。因此先查看单个像元大小，发现为 “1, 1”，且线性单位为英尺，因此一个像元大小为 1 平方英尺。</p>
+<p><span class="math inline">\(\quad\quad\)</span>对 “可用辐射 8 月” 进行区域求和操作，就可以得到每一栋房屋可用屋顶范围内的像元总数，在栅格数据中，它通常是由 “Count” 字段来表示。设置界面如下：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwhLD.png" width="480px" height="330px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图32 以表格显示分区统计
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>打开 “area_rad” 表格可以发现，除了 “COUNT” 字段，分区统计工具自动生成了一个 “AREA” 属性字段，并且两者相等没有差别，单位是平方英尺，后面我们使用 “AREA” 继续计算。此外，“SUM” 字段表示可用房屋屋顶范围内的太阳辐射量之和（此时 SUM 没有乘以面积，因此没有具体意义，但在后续过程会用到）。</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXw5ee.png" width="480px" height="330px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图33 以表格显示分区统计的输出表格
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>连接 Building 与 area_rad 表格：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/23/jXwIdH.png" width="280px" height="430px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图34 连接 Building 与 area_rad 表格
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>使用【字段计算器】将面积的单位从平方英尺转换为平方米，表达式如下所示：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/24/jXjekF.png" width="480px" height="330px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图35 将面积的单位转化为平方米
+ </font>
+ </div>
+</li>
+<li>
+<p>计算【可用辐射量 8 月】<br>
+<span class="math inline">\(\quad\quad\)</span>首先【按属性选择】可用面积大于 25 平方米的房屋屋顶，然后在属性表中点击【显示所选记录】按钮，如下图标注：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/24/jXjVTU.png" width="480px" height="320px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图36 按属性从 Building 选择可用面积大于 25 平方米的房屋
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>然后右键字段名称【可用辐射量 8 月】，打开【字段计算器】，我理解是这里使用微积分的思想计算每栋房屋的太阳辐射量，即：$<br>
+Radiate_{sum}=\oint_{s} E(x, y)\cdot dS=\sum E(x_i, y_i) \cdot \Delta S $</p>
+<p><span class="math inline">\(\quad\quad\)</span>其中，<span class="math inline">\(\Delta S\)</span>是 1 平方英尺，而前面提到的 SUM 字段则表示 <span class="math inline">\(\sum E(x_i, y_i)\)</span>，因此【字段计算器】中输出的表达式如下所示（注意输出单位是千瓦时，因此需要乘以0.001）：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/24/jXjAmV.png" width="300px" height="380px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图37 计算可用房屋屋顶范围接受的太阳辐射量
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>输出结果后取消【按属性选择】，回到正常的属性表界面。可以看到如下结果：</p>
+ <div align="center">
+ <img src="https://s1.ax1x.com/2022/07/24/jXjEwT.png" width="480px" height="350px">
+ </div>
+ <div align="center">
+ <font size="1">
+ 图38 计算可用房屋屋顶范围接收的太阳辐射量结果
+ </font>
+ </div>
+<p><span class="math inline">\(\quad\quad\)</span>最后取消 Building 与 area_rad 之间的连接。</p>
+</li>
+</ol>
+<h2 id="结尾参赛收获及数据下载地址">结尾：参赛收获及数据下载地址</h2>
+<p><span class="math inline">\(\quad\quad\)</span>这道题目做下来觉得操作量挺大的，耗时也比较长，例如使用 Arcpy 那一部分在我的电脑上运行了半个小时左右。在规定时间内完成全部题目很有难度。当然，如果操作者对 ArcGIS 分析流程更熟悉的话就容易很多，我还要继续加油。</p>
+<p><span class="math inline">\(\quad\quad\)</span><a href="https://pan.baidu.com/s/1mmVQoDukNlP7Hg9Fzj1pQA" target="_blank" rel="noopener nofollow">数据下载地址</a>（提取密码：wx7d）</p>
+<p><a href="https://imgse.com/" target="_blank" rel="noopener nofollow">路过图床</a>提供在线图片支撑。</p>
+
+
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo" class="post-meta-container">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date" data-last-update-days="491.63125" data-date-updated="2023-11-27 22:59">2022-07-24 07:50</span>&nbsp;
+<a href="https://www.cnblogs.com/XiongHaiyang">北极洲的小卖部</a>&nbsp;
+阅读(<span id="post_view_count">7342</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(16512709);return false;">收藏</a>&nbsp;
+<a href="https://report.cnblogs.com?targetLink=https%3A%2F%2Fwww.cnblogs.com%2FXiongHaiyang%2Fp%2F16512709.html&targetId=16512709&targetType=0" target="_blank">举报</a>
+</div>
+        </div>
+        <script>
+    var cb_entryId = 16512709, cb_entryCreatedDate = '2022-07-24 07:50', cb_postType = 1, cb_postTitle = '第十届全国大学生GIS应用技能大赛试题及参考解题过程(A下午)';
+    var allowComments = true, cb_blogId = 720844, cb_blogApp = 'XiongHaiyang', cb_blogUserGuid = '430e9dce-80c1-4553-874a-08d8d71b3f30';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");    
+</script>
+        <a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav">
+        <div class="comment-nav-right">
+            <span id="span_refresh_tips"></span><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a>
+        </div>
+    </div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+        <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+        <div id="blog_c1" class="under-post-card below-post-card">
+            <a href="https://www.volcengine.com/activity/codingplan?utm_campaign=hw&amp;utm_content=hw&amp;utm_medium=devrel_tool_web&amp;utm_source=OWO&amp;utm_term=cnblogs" rel="nofollow" target="_blank" onclick="countCreativeClicks('C1-volcengine-codingplan')">
+                <img src="https://img2024.cnblogs.com/blog/35695/202606/35695-20260609221536870-1777800795.webp" onload="countCreativeImpressions('C1-volcengine-codingplan')" alt="" style="width:300px!important;height:250px!important;min-width:300px!important;max-width:300px!important;" />
+                <span id="c1_impression" style="display:none"></span>
+            </a>
+        </div>
+    <div id="under_post_card1"></div>
+    <div id="related_posts_card"></div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card below-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+        window.footnoteTipManager.generateFootnoteTips();
+
+            window.tocManager.displayDisableTocTips = false;
+            window.tocManager.generateToc();
+            
+            setTimeout(function() { countViews(cb_blogId, cb_entryId); }, 50);
+            
+            deliverT2();
+            deliverC1C2();
+            loadNewsAndKb();
+            
+            LoadPostCategoriesTags(cb_blogId, cb_entryId);
+            
+            LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+            GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+            loadOptUnderPost();
+            GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+                </script>
+</div>
+
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                <div id="sidebar_news" class="newsItem">
+    
+<h3 class="catListTitle">公告</h3>
+<div id="blog-news" class="sidebar-news">
+    <div id="sidebar_news_container">
+    </div>
+</div>
+<script>loadBlogNews();</script>
+</div>
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        
+<a href="https://www.cnblogs.com/" id="footer_site_link" class="footer-brand">博客园</a>
+<span class="footer-copyright"> &nbsp;&copy;&nbsp; 2004-2026</span>
+<br /><span class="footer-icp">
+    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602011771"><img src="//assets.cnblogs.com/images/ghs.png" />浙公网安备 33010602011771号</a>
+    <a href="https://beian.miit.gov.cn" target="_blank">浙ICP备2021040463号-3</a>
+</span>
+
+    </div>
+</div>
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8Pn9bUKjiU5Il6bOWcQWpk3rESw3I6M0cZI6IhslAYpY4SRV7PWmW1LmqliawCK8eVgOZ-O5e0ONX5uAQlCP5TfOUjOiXBdRgGn-MW9hfh5duMZfXsyXTOaRVxdh9ZLUrfkndADRu5wTf6yaYR3ERQI" />
+    <script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+<script defer src="https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?32d945448dd797af605da9156763de3dc11c9886368d0f917d6388e4fcf5542030632485602430134f60bc55ca391050b680e2741bf7233a8f1da9902314a3fa" id="ttzz"></script>
+</body>
+</html>
