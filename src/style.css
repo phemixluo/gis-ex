@@ -24,6 +24,7 @@
 .source-note { margin:8px 0 0; color:#7ba8a2; font-size:12px; line-height:1.7; }
 .source-overview { display:grid; gap:10px; margin-bottom:14px; }
 .source-overview-kicker { margin:0; color:var(--orange); font:11px 'DM Mono'; letter-spacing:.08em; }
+.source-block-item > div:only-child { grid-column:1 / -1; }
 .source-reading-body { display:grid; gap:10px; }
 .source-block-item { display:grid; grid-template-columns:34px minmax(0,1fr); gap:13px; padding:14px 16px; background:rgba(223,243,233,.055); border:1px solid rgba(190,229,219,.12); }
 .source-block-marker { color:#6fa9a1; font:11px 'DM Mono'; padding-top:3px; }
