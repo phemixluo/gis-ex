@@ -26,14 +26,16 @@ const selectedQuestion = computed(() => {
   return problem?.steps[index] ? { problem, step: problem.steps[index], index } : null
 })
 const selectedExcerpt = computed(() => {
-  if (!selectedQuestion.value) return null
-  return curatedExcerpts[selectedQuestion.problem.id] || null
+  const question = selectedQuestion.value
+  if (!question) return null
+  return curatedExcerpts[question.problem.id] || null
 })
 const selectedArticleOverview = computed(() => selectedExcerpt.value?.overview || [])
 const selectedArticleBlocks = computed(() => {
-  if (!selectedQuestion.value || !selectedExcerpt.value) return []
+  const question = selectedQuestion.value
+  if (!question || !selectedExcerpt.value) return []
   let counter = 0
-  return (selectedExcerpt.value.steps[selectedQuestion.index] || [])
+  return (selectedExcerpt.value.steps[question.index] || [])
     .map((block) => ({ ...block, displayIndex: block.heading || block.method ? null : ++counter }))
 })
 const selectedArticleNote = computed(() => selectedExcerpt.value?.note || '')
