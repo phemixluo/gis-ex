@@ -21,6 +21,9 @@
 .method-stack { display:grid; gap:10px; margin:0 0 22px; }.method-card { padding:14px 16px; border:1px solid rgba(155,224,216,.26); background:rgba(3,25,34,.25); }.method-card b { color:var(--orange); font-size:14px; }.method-card p { margin:8px 0 0; color:#c5ddda; font-size:13px; line-height:1.75; }
 .detail-shell { display:grid; grid-template-columns:220px minmax(0,1fr); gap:42px; }.detail-sidebar { position:sticky; top:22px; align-self:start; padding:19px 0; border-right:1px solid rgba(190,229,219,.2); }.sidebar-kicker { margin:0 20px 14px 0; color:#87b6af; font:11px 'DM Mono'; letter-spacing:.06em; }.detail-sidebar button { display:flex; align-items:start; gap:10px; width:calc(100% - 20px); padding:11px 12px 11px 0; border:0; border-left:2px solid transparent; color:#9bc0ba; background:none; text-align:left; cursor:pointer; font-size:12px; line-height:1.55; }.detail-sidebar button span { flex:none; color:#638f8c; font:11px 'DM Mono'; }.detail-sidebar button.active { padding-left:10px; border-left-color:var(--orange); color:white; background:rgba(89,210,199,.08); }.detail-sidebar button.active span { color:var(--orange); }.detail-reading { min-width:0; }.detail-reading .route-section:first-child { padding-top:0; }.detail-reading .source-block { margin-top:30px; }
 .source-reading { padding:48px 0 18px; border-bottom:1px solid rgba(190,229,219,.18); }
+.source-note { margin:8px 0 0; color:#7ba8a2; font-size:12px; line-height:1.7; }
+.source-overview { display:grid; gap:10px; margin-bottom:14px; }
+.source-overview-kicker { margin:0; color:var(--orange); font:11px 'DM Mono'; letter-spacing:.08em; }
 .source-reading-body { display:grid; gap:10px; }
 .source-block-item { display:grid; grid-template-columns:34px minmax(0,1fr); gap:13px; padding:14px 16px; background:rgba(223,243,233,.055); border:1px solid rgba(190,229,219,.12); }
 .source-block-marker { color:#6fa9a1; font:11px 'DM Mono'; padding-top:3px; }

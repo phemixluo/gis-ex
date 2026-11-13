@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { methodGroups, problems } from './data/problems'
-import { getArticleBlocks } from './data/articleSources'
+import { curatedExcerpts } from './data/analysisExcerpts'
 
 const selectedYear = ref('全部届次')
 const selectedSession = ref('全部场次')
@@ -25,14 +25,22 @@ const selectedQuestion = computed(() => {
   const index = Number(match[2])
   return problem?.steps[index] ? { problem, step: problem.steps[index], index } : null
 })
-const selectedArticleBlocks = computed(() => {
-  if (!selectedQuestion.value) return []
-  const { problem, index } = selectedQuestion.value
-  const blocks = getArticleBlocks(problem.id)
-  const scoped = blocks.filter((block) => block.taskIndex === index)
-  const mapped = blocks.filter((block) => block.taskIndex !== null)
-  return scoped.length >= 3 ? scoped : mapped.length ? mapped : blocks
+const selectedExcerpt = computed(() => {
+  if (!selectedQuestion.value) return null
+  return curatedExcerpts[selectedQuestion.problem.id] || null
 })
+const selectedArticleOverview = computed(() => selectedExcerpt.value?.overview || [])
+const selectedArticleBlocks = computed(() => {
+  if (!selectedQuestion.value || !selectedExcerpt.value) return []
+  let counter = 0
+  return (selectedExcerpt.value.steps[selectedQuestion.index] || [])
+    .map((block) => ({ ...block, displayIndex: block.heading || block.method ? null : ++counter }))
+})
+const selectedArticleNote = computed(() => selectedExcerpt.value?.note || '')
+
+function blockImages(block) {
+  return Array.isArray(block.image) ? block.image : (block.image ? [block.image] : [])
+}
 
 function openQuestion(id) {
   selectedQuestionId.value = id
@@ -130,7 +138,7 @@ onUnmounted(() => window.removeEventListener('hashchange', readHash))
 
         <section class="steps-section" aria-labelledby="steps-title"><div class="detail-label"><span>02</span><h3 id="steps-title">任务内小问拆解</h3><p>按题目小问与解析中的执行顺序复习。</p></div><article class="question-focus"><h4>{{ selectedQuestion.step.title }}</h4><p>{{ selectedQuestion.step.detail }}</p><div v-if="selectedQuestion.step.methods?.length" class="method-stack"><div v-for="method in selectedQuestion.step.methods" :key="method.name" class="method-card"><b>{{ method.name }}</b><p>{{ method.detail }}</p></div></div><ol class="operation-list"><li v-for="operation in selectedQuestion.step.operations || []" :key="operation.text"><span class="operation-text">{{ operation.text }}</span><span class="operation-tool">{{ operation.tool }}</span></li></ol><div class="focus-tool">任务主线工具：{{ selectedQuestion.step.tool }}</div></article></section>
 
-        <section v-if="selectedArticleBlocks.length" class="source-reading" aria-labelledby="source-reading-title"><div class="detail-label"><span>03</span><h3 id="source-reading-title">对应解析原文摘录</h3><p>以下内容按当前任务从本地解析 HTML 拆出，保留了原文的具体操作、参数提示和多解方法。</p></div><div class="source-reading-body"><div v-for="(block, blockIndex) in selectedArticleBlocks" :key="`${block.text}-${blockIndex}`" class="source-block-item" :class="{ 'source-heading': block.heading, 'source-method': block.method }"><div class="source-block-marker" aria-hidden="true">{{ String(blockIndex + 1).padStart(2, '0') }}</div><div><p v-if="block.heading || block.method" class="source-block-label">{{ block.method ? '方法分支' : '解析步骤' }}</p><h4 v-if="block.heading || block.method">{{ block.text }}</h4><p v-else>{{ block.text }}</p><img v-if="block.image" :src="block.image" alt="解析文章中的操作示意图" loading="lazy" /></div></div></div></section>
+        <section v-if="selectedArticleOverview.length || selectedArticleBlocks.length" class="source-reading" aria-labelledby="source-reading-title"><div class="detail-label"><span>03</span><h3 id="source-reading-title">对应解析原文摘录</h3><p>整理自对应解析文章，保留原文的具体操作、参数提示与多解方法，仅作格式与文字上的轻度梳理。</p><p v-if="selectedArticleNote" class="source-note">{{ selectedArticleNote }}</p></div><div class="source-reading-body"><div v-if="selectedArticleOverview.length" class="source-overview"><p class="source-overview-kicker">整题导读</p><div v-for="(block, blockIndex) in selectedArticleOverview" :key="`overview-${blockIndex}`" class="source-block-item" :class="{ 'source-heading': block.heading, 'source-method': block.method }"><div><h4 v-if="block.heading || block.method">{{ block.text }}</h4><p v-else>{{ block.text }}</p><img v-for="url in blockImages(block)" :key="url" :src="url" alt="解析文章中的操作示意图" loading="lazy" /></div></div></div><div v-for="(block, blockIndex) in selectedArticleBlocks" :key="`${block.text}-${blockIndex}`" class="source-block-item" :class="{ 'source-heading': block.heading, 'source-method': block.method }"><div v-if="block.displayIndex" class="source-block-marker" aria-hidden="true">{{ String(block.displayIndex).padStart(2, '0') }}</div><div><p v-if="block.method" class="source-block-label">方法分支</p><h4 v-if="block.heading || block.method">{{ block.text }}</h4><p v-else>{{ block.text }}</p><img v-for="url in blockImages(block)" :key="url" :src="url" alt="解析文章中的操作示意图" loading="lazy" /></div></div></div></section>
 
         <div class="detail-columns"><section><div class="detail-label"><span>04</span><h3>整题关键工具</h3></div><div class="tool-cloud"><span v-for="tool in selectedQuestion.problem.tools" :key="tool">{{ tool }}</span></div></section><section class="pitfalls"><div class="detail-label"><span>05</span><h3>易错点</h3></div><ul><li v-for="pitfall in selectedQuestion.problem.pitfalls" :key="pitfall">{{ pitfall }}</li></ul></section></div>
 
